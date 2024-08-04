@@ -1,71 +1,126 @@
-# Getting Started with Create React App
+# CosmoCloud Employees CRUD Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple CRUD (Create, Read, Update, Delete) application for managing employee records using CosmoCloud as the backend service. This application is built using React Js.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- List all employees
+- View employee details
+- Add new employee
+- Edit existing employee
+- Delete employee
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Make sure you have the following installed on your local development machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- Git
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```sh
+    git clone https://github.com/ADIB-AFSAR/cosmocloud_employees_crud.git
+    cd cosmocloud_employees_crud
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the dependencies:
 
-### `npm run eject`
+    ```sh
+    npm install
+    # or
+    yarn install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Create a `.env` file in the root directory of the project and add the following environment variables. Replace the placeholders with your actual CosmoCloud project details:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```env
+    REACT_APP_PROJECT_ID=your_project_id
+    REACT_APP_ENVIRONMENT_ID=your_environment_id
+    REACT_APP_BASE_URL=https://free-ap-south-1.cosmocloud.io/development/api
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application uses the following environment variables, which should be set in a `.env` file in the root directory of the project:
 
-## Learn More
+- `REACT_APP_PROJECT_ID`: Your CosmoCloud project ID.
+- `REACT_APP_ENVIRONMENT_ID`: Your CosmoCloud environment ID.
+- `REACT_APP_BASE_URL`: The base URL for the CosmoCloud API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Start the development server:
 
-### Code Splitting
+    ```sh
+    npm start
+    # or
+    yarn start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Open your browser and navigate to `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```plaintext
+cosmocloud_employees_crud/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── api/
+│   │   └── employeeApi.js
+│   ├── components/
+│   │   ├── AddEmployee.jsx
+│   │   ├── EmployeeDetails.jsx
+│   │   └── EmployeeList.jsx
+│   ├── styles/
+│   │   └── App.css
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .env
+├── package.json
+└── README.md
 
-### Making a Progressive Web App
+## API Reference
+ -- Endpoints
+The application interacts with the following CosmoCloud API endpoints:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+GET /employee_model?limit=10&offset=0: Fetches a list of employees.
+GET /employee_model/
+: Fetches details of a specific employee.
+POST /employee_model: Adds a new employee.
+PUT /employee_model/
+: Updates an existing employee.
+DELETE /employee_model/
+: Deletes an employee.
 
-### Advanced Configuration
+ -- Headers
+Each request to the CosmoCloud API must include the following headers:
+projectId: Your CosmoCloud project ID.
+environmentId: Your CosmoCloud environment ID.
+Accept: application/json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# cosmocloud_Employees_crud
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+Fork the repository.
+Create a new branch: git checkout -b my-feature-branch.
+Commit your changes: git commit -m 'Add some feature'.
+Push to the branch: git push origin my-feature-branch.
+Open a pull request.
+License
