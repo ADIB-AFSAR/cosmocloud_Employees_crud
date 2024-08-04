@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const HEADERS = {
-  projectId: "66aa204c440310e3620e0998", //only for testing purposes
-  environmentId: "66aa204c440310e3620e0999", //only for testing purpose
+  projectId: process.env.REACT_APP_PROJECT_ID, 
+  environmentId: process.env.REACT_APP_ENVIRONMENT_ID,
   Accept: "application/json",
   "Content-Type": "application/json",
 };
