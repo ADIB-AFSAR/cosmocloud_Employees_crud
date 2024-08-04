@@ -95,9 +95,13 @@ cosmocloud_employees_crud/
 │   └── ...
 ├── .env
 ├── package.json
-└── README.md
+└── README.md 
 
-## API Reference
+
+
+
+
+ ##  API Reference
  -- Endpoints
 The application interacts with the following CosmoCloud API endpoints:
 
